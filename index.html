@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Hook Blog</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <header>
+        <img class="hero-img" src="images/blog-hero.svg">
+        <h1 class="hero-heading">Understanding the <span class="heading-inverted">State Hook in React</span> and how to
+            use it </h1>
+    </header>
+
+    <div class="container container-center">
+
+        <small>July, 2021</small>
+
+        <h2> An Overview on what we're going to cover</h2>
+
+        <p> In this blog, we'll try to simplify and understand what <strong>Hooks</strong> are and then dive deep into
+            understanding the <strong>State Hook</strong>, and how to implement it in your web app. Along the way, we
+            would also understand what a CodeSandbox is and how to use it. So let's get started!
+        </p>
+
+        <h3>Prerequisite</h3>
+        <p>Before we go deeper into this blog, here's the prequisite to make the most out of it. Readers should have a
+            basic understanding of JavaScript, related VanillaJS concepts, and some understanding of how React works.
+        </p>
+
+        <h2>What are Hooks and when do we use them</h2>
+        <p>Hooks are functions that let us “hook into” React state and lifecycle features from function components. They
+            basically let us use more of React's features without classes and that's the reason they're so popular. React
+            provides some built-in Hooks and <strong>useState</strong> is one of them which is also called the
+            <strong>State Hook</strong>.</p>
+
+        <h2>Implementing the State Hook in your Web App</h2>
+        <p>We'll create a simple web app where we would be taking input from the user and render it or show the output
+            in view using the State Hook. To do so, we'll setup our dev environment in <a class="link"
+                href="https://codesandbox.io/dashboard/home?workspace=a546baa0-47ae-41b9-83cb-5c3beb77a222">
+                <strong>CodeSandbox</strong>.</a> CodeSandbox is basically VSCode on the cloud. To implement a React
+            app on VSCode, we would have to install a lot of dependencies which can be avoided as it's all taken care of by
+            CodeSandbox. When you click on CodeSandbox, click on 'New Sandbox' and then click on 'React by CodeSandbox'
+            as shown below:</p>
+
+        <img class="img-secondary" src="images/image1.PNG">
+
+        <p>Once you've clicked on that, your sandbox would open as shown below. Let's name it to 'use-state-react'.</p>
+
+        <img class="img-secondary" src="images/image2.PNG">
+
+        <p>We'll start writing our code in the 'App.js' file and the white space we see on the right side is what our
+            web app would look like.</p>
+
+        <h2>Taking an input and calling a function</h2>
+        <p>We first change the heading 'h1' to <strong>The State Hook</strong> and remove 'h2'. You could name it to
+            anything you want. Now below the heading, we create an 'input' field using the <strong>input tag </strong> for users 
+            to put in their info as shown below: </p>
+
+        <img class="img-secondary" src="images/image3.PNG">
+
+        <p>Once we've created the input field, we want to read whatever the users would put in there. To do so, we use
+            the <strong>onChange</strong> event Handler. And whatever we want to do with that input, we mention that in
+            a function as shown below: </p>
+
+        <img class="img-secondary" src="images/image4.PNG">
+
+        <p>Please note, onChange is a JSX attribute. To read more about JSX, <a class="link"
+                href="https://reactjs.org/docs/introducing-jsx.html"> <strong>click here</strong>. </a></p>
+
+        <p>Now, we notice that as soon as we declare the funtion, a reference error is thrown which says that the
+            function is not defined. Hence, we now go and define the function as follows: </p>
+
+        <img class="img-secondary" src="images/image5.PNG">
+
+        <p>Inside this function, we now need to read the input and store it in a variable. Hence, we declare a variable
+            called 'input' and for reading the input value we write 'event.target.value.' Read more about Event.target
+            <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target"> <strong>here</strong>.
+            </a> </p>
+
+            <p>To check whether our app works or not, we first print the output in the console. The console is the best place to test your app.</p>
+
+            <img class="img-secondary" src="images/image6.PNG">
+
+            <p>Now as soon as we type something in the input field, it appears in the console as follows, and confirms the fact that our app is working fine.</p>
+
+            <img class="img-secondary" src="images/image7.PNG">
+
+            <h2>Importing the State Hook and implementing it in the App</h2>
+
+            <p>Now, we don't want the output to appear in the console - we want it to appear in the view. To do that, we use the <strong>useState</strong> Hook. We need to first import 'useState' from React.</p>
+
+            <p>We call 'useState' inside a function component to add some local state to it, in this case the function is 'inputChangeHandler'. You could name the function anything. 'useState' returns a pair of values, however functions in JavaScript can only return <strong>a single value</strong>. Hence, such functions either return <strong> an Object or an Array</strong>. This might feel a bit overwhelming, however the more you read about it, the more comfortable you'll get. </p>
+
+            <img class="img-secondary" src="images/image8.PNG">
+
+            <p>The pair of values returned by 'useState' signify the current state value and a function that lets you update it. Basically 'input' holds the current input value put by the user and 'setInput' stores that value which can be updated whenever the input changes. Hence, you need to update 'setInput' every time the input has been changed. It is also called as the <strong>Setter</strong>.</p>
+
+            <p>Now, we're almost done with the program. We just need to update the value of input in 'SetInput' and then render or show the current value which is 'input' in the view or the app. We do that as follows: </p>
+
+            <img class="img-secondary" src="images/image9.PNG">
+
+            <p>As we can see, the input was stored in 'setInput' in the function and then we rendered it below the input in the 'h2' tag. You could use any heading tag or even a div tag to render the output. As seen on the righ-hand side, whatever we type in the input field - appears as output below it.</p>
+
+            <p>And just like that, we've learnt to implement the <strong>State Hook</strong></strong> in our web app. Until next time!</p>
+
+    </div>
+
+
+
+</body>
+
+</html>
